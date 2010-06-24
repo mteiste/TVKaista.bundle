@@ -5,6 +5,10 @@ from PMS.Shortcuts import *
 
 import feedparser
 
+from email.utils import formatdate
+from calendar import timegm
+
+
 VIDEO_PREFIX = "/video/tvkaista"
 ROOT_URL	= "http://www.tvkaista.fi/feed/"
 
@@ -81,10 +85,11 @@ def getMenu(sender, url):
 					VideoItem(
 						authURL(entry.enclosures[0].url), 
 						entry.title, 
-						subtitle=entry.date, 
+						subtitle=formatdate(timegm(entry.updated_parsed), True), # Dates in localtime
 						summary=entry.description
 					)
 				)
+				
 			except: # Missing info doesn't stop listing
 				Log(entry.title + "-> missing information")
 						
