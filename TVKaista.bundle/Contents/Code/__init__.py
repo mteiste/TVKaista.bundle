@@ -77,13 +77,20 @@ def getMenu(sender, url):
 		
 		for entry in feed.entries:
 			try:
-				dir.Append(VideoItem(authURL(entry.enclosures[0].url), entry.title, subtitle=entry.date, summary=entry.description))
+				dir.Append(
+					VideoItem(
+						authURL(entry.enclosures[0].url), 
+						entry.title, 
+						subtitle=entry.date, 
+						summary=entry.description
+					)
+				)
 			except: # Missing info doesn't stop listing
 				Log(entry.title + "-> missing information")
 						
 	else: # Directory
 		for entry in feed.entries:
-			if entry.title != 'Search':
+			if entry.title != 'Search' and entry.title != 'Storage':
 				dir.Append(
 					Function(
 						DirectoryItem(
@@ -95,9 +102,10 @@ def getMenu(sender, url):
 				)
 		
 	return dir
-	
+
 def SearchMenu(sender,query=None):
 	search = query.replace (' ', '+')
+	
 	return getMenu(sender=None, url="http://tvkaista.fi/feed/search/title/" + search)
 	
 def authURL(url):
