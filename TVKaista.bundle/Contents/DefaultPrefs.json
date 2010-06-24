@@ -1,0 +1,25 @@
+[
+
+        {
+                "id":           "username",
+                "label":        "Username",
+                "type":         "text",
+                "default":      "",
+        },
+
+        {
+                "id":           "password",
+                "label":        "Password",
+                "type":         "text",
+                "option":       "hidden",
+                "default":      "",
+        },
+
+        {
+                "id":           "format",
+                "label":        "Format",
+                "type":         "enum",
+                "values":       ["h264", "flv", "mp4"],
+                "default":      "h264",
+        },
+]
