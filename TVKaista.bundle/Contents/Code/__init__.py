@@ -9,10 +9,10 @@ from email.utils import formatdate
 from calendar import timegm
 
 
-VIDEO_PREFIX = "/video/tvkaista"
-ROOT_URL	= "http://www.tvkaista.fi/feed/"
+VIDEO_PREFIX	= "/video/tvkaista"
+ROOT_URL		= "http://www.tvkaista.fi/feed/"
 
-NAME = L('Title')
+NAME	= L('Title')
 ART		= 'art-default.png'
 ICON	= 'icon-default.png'
 
@@ -72,7 +72,21 @@ def getMenu(sender, url):
 	
 	url = authURL(url) # Add authentication to url
 	feed = feedparser.parse(url)
-
+	
+	# History browsing
+	if(feed.feed.has_key('link')):
+		for link in feed.feed.links:
+			if link.rel == 'prev-archive':
+				dir.Append(
+					Function(
+						DirectoryItem(
+							getMenu,
+							L('Previous'),
+							subtitle=L('PreviousSub') 
+						), url=link.url.split('/flv.mediarss')[0]
+					)	
+				)
+			
 	if feed['feed']['description'].find("Media RSS") == 0: # Video listing
 		if url[len(url) - 1] != '/':
 			url = url + '/'	

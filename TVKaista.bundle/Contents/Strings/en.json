@@ -9,5 +9,7 @@
     'MoviesSum': 'TVKaista title search: elokuva',
     'SearchTitle': 'Search',
     'SearchSub': 'Search title',
-    'SearchSum': 'Search TVKaista for title'
+    'SearchSum': 'Search TVKaista for title',
+    'Previous': '*Previous day',
+    'PreviousSub': 'Go back in history'
 }
