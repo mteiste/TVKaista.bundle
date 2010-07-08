@@ -28,6 +28,9 @@ def VideoMainMenu():
 	try:
 		dir = getMenu(sender=None, url=ROOT_URL)
 		
+		if len(dir) == 0:
+			raise Exception('Empty Container')
+		
 		dir.Append( # Movie dir
 			Function(
 				DirectoryItem(
@@ -51,8 +54,8 @@ def VideoMainMenu():
 				)
 			)
 		)
-		
-	except: # Displays settings when listing fails
+	
+	except: # Displays settings even when listing fails
 		dir = MediaContainer(viewGroup="InfoList")
 		
 	dir.Append(
