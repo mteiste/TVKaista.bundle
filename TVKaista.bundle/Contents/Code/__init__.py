@@ -204,7 +204,6 @@ def getMenu(sender, url):
 				)
 			except: # Missing info doesn't stop listing
 				Log("-> missing information")
-				raise
 				
 	else: # Directory
 		for entry in feed.entries:
