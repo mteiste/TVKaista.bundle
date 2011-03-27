@@ -132,11 +132,11 @@ def getMenu(sender, url):
 	if feed['feed']['description'].find("Media RSS") == 0: # Video listing
 		fixdict = {}
 		
-		if Prefs.Get('fixtitle'): #Ugly title hack
-			simplefeed = feedparser.parse(url.split("/standard.mediarss")[0] + "/flv.rss")
-			for fixentry in simplefeed.entries:
-				if fixentry.has_key('link'):
-					fixdict[fixentry.link] = fixentry.title
+		#Ugly title hack
+		simplefeed = feedparser.parse(url.split("/standard.mediarss")[0] + "/flv.rss")
+		for fixentry in simplefeed.entries:
+			if fixentry.has_key('link'):
+				fixdict[fixentry.link] = fixentry.title
 		
 		for entry in feed.entries:
 			try:
@@ -151,9 +151,8 @@ def getMenu(sender, url):
 					Log("I'm a big bad bug!")
 					Log(entry.get('title_detail', 'value'))
 					
-					if Prefs.Get('fixtitle'):
-						if entry.link in fixdict:
-							title = fixdict[entry.link]
+					if entry.link in fixdict:
+						title = fixdict[entry.link]
 				
 				if title == "":
 					title = type(entry.title).__name__ + repr(entry.title)

@@ -21,11 +21,4 @@
                 "values":       ["8000", "4000", "2000", "1000", "300"],
                 "default":      "2000",
         },
-        
-        {
-        		"id":			"fixtitle",
-        		"label":		"Use title fix workaround (ugly & slower)",
-        		"type":			"bool",
-        		"default":		"true",
-        },
 ]
