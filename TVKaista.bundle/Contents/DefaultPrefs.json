@@ -3,7 +3,7 @@
                 "id":           "username",
                 "label":        "Username",
                 "type":         "text",
-                "default":      "",
+                "default":      ""
         },
 
         {
@@ -11,7 +11,7 @@
                 "label":        "Password",
                 "type":         "text",
                 "option":       "hidden",
-                "default":      "",
+                "default":      ""
         },
 
         {
@@ -19,6 +19,6 @@
                 "label":        "Preferred Bitrate",
                 "type":         "enum",
                 "values":       ["8000", "4000", "2000", "1000", "300"],
-                "default":      "2000",
-        },
+                "default":      "2000"
+        }
 ]
