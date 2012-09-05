@@ -13,6 +13,10 @@
     "PopularTitle": "Popular",
     "PopularSub": "Top 20",
     "PopularSum": "Top 20 most watched programs",
+    "LatestTitle": "Latest",
+    "LatestSub": "Latest followed",
+    "LatestSum": "Latest followed shows",
+    "MoviesTitle": "Movies",
     "MoviesTitle": "Movies",
     "MoviesSub": "All Movies",
     "MoviesSum": "Programs matching title search for elokuva",
@@ -27,5 +31,8 @@
     "Login": "Login",
     "EnterLogin": "Please enter your login information in Settings",
     "Empty": "Empty",
-    "EmptyContainer": "There aren't any items"
+    "EmptyContainer": "There aren't any items",
+    "TodayTitle": "Today",
+    "TodaySub": "Today's programs",
+    "TodaySum": "Programs recorded today"
 }

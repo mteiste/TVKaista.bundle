@@ -20,6 +20,8 @@
     <string>1.0</string>
     <key>PlexPluginMode</key>
     <string>AlwaysOn</string>
+    <key>PlexClientPlatforms</key>
+    <string>*</string>
     <key>PlexPluginConsoleLogging</key>
     <string>0</string>
   </dict>
