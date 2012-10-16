@@ -276,7 +276,7 @@ def MainMenu():
                                       subtitle=L('SeasonsSub'), 
                                       summary=L('SeasonsSum')), 
                         url=ROOT_URL+"seasonpasses/",
-			add_date=True, sort_first=True))
+			add_date=True, reverse=True, sort_first=True))
     dir.Append(Function(InputDirectoryItem(SearchMenu, L('SearchTitle'),
                                            L('SearchSub'),
                                            subtitle=L('SearchSub'),
