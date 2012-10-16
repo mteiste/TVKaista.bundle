@@ -17,7 +17,7 @@ day_name = [ 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday',
         'Saturday', 'Sunday' ]
 short_day_name = [ 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa', 'Su' ]
 
-VIDEO_PREFIX = "/video/tvkaista"
+VIDEO_PREFIX = "/video/tvkaista2"
 ROOT_URL = "http://www.tvkaista.fi/feed/"
 
 NAME = L('Title')
