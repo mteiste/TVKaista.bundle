@@ -185,11 +185,15 @@ def GetListing(sender, url, reverse=False, add_date=False):
     return dir
         
 
-def GetMenu(sender, url, reverse=False, add_date=False):
+def GetMenu(sender, url, reverse=False, add_date=False, sort_first=False):
     data = read_content(url)
     channel_list = Channels(data)
     if not channel_list:
         return MessageContainer(L('Empty'), L('EmptyContainer'))
+
+    if sort_first:
+        channel_list = sorted(channel_list, 
+			      cmp=lambda a,b: cmp(a[0], b[0]))
         
     dir = MediaContainer()
     for title, desc, url, chid in channel_list:
@@ -272,7 +276,7 @@ def MainMenu():
                                       subtitle=L('SeasonsSub'), 
                                       summary=L('SeasonsSum')), 
                         url=ROOT_URL+"seasonpasses/",
-			add_date=True))
+			add_date=True, sort_first=True))
     dir.Append(Function(InputDirectoryItem(SearchMenu, L('SearchTitle'),
                                            L('SearchSub'),
                                            subtitle=L('SearchSub'),
