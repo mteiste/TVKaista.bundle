@@ -53,7 +53,7 @@ def read_content(url):
         handle = urllib2.urlopen(req)
     except IOError, e:
         # here we shouldn't fail if the username/password is right
-        Log("It looks like the username or password is wrong.")
+	Log("FAIL (url = '%s':%s)" % (url, e))
 	return None
 
     return handle.read()
@@ -67,7 +67,7 @@ def Channels(content):
         desc = safe_get_text(item.find('description'), "")
         url = safe_get_text(item.find('link'))
         if url:
-            chid = url.split('/')[-1]
+            chid = filter(lambda x: x != '', url.split('/'))[-1]
         else:
             chid = None
         
